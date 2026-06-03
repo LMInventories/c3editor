@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="terracotta">#C0522A</color>
+    <color name="terracotta_dark">#8B3A1D</color>
+    <color name="terracotta_light">#D4724F</color>
+    <color name="parchment">#F5E6C8</color>
+    <color name="parchment_dark">#E8D5A3</color>
+    <color name="stone">#9E9484</color>
+    <color name="stone_dark">#6B6258</color>
+    <color name="gold">#C8A84B</color>
+    <color name="gold_light">#DFC27D</color>
+    <color name="ink">#2C1F0E</color>
+    <color name="card_background">#FBF0DC</color>
+    <color name="divider">#D4C4A0</color>
+    <color name="field_background">#FFF8EC</color>
+    <color name="white">#FFFFFF</color>
+</resources>

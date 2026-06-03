@@ -1,0 +1,2 @@
+-keep class com.caesar3.editor.data.** { *; }
+-keep class com.caesar3.editor.parser.** { *; }

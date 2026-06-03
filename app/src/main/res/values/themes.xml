@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.CaesarEditor" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/terracotta</item>
+        <item name="colorPrimaryDark">@color/terracotta_dark</item>
+        <item name="colorAccent">@color/gold</item>
+        <item name="android:windowBackground">@color/parchment</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!-- Shared label style: small, all-caps, earthy colour -->
+    <style name="CaesarLabel">
+        <item name="android:textColor">@color/stone_dark</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+</resources>

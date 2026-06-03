@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Caesar III Editor</string>
+    <string name="tab_buildings">Buildings</string>
+    <string name="tab_houses">Houses</string>
+    <string name="menu_open">Open File</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_save_as">Save As…</string>
+    <string name="label_cost">Cost</string>
+    <string name="label_desirability">Desirability</string>
+    <string name="label_des_step">DES Step</string>
+    <string name="label_des_step_size">Step Size</string>
+    <string name="label_des_range">Max Range</string>
+    <string name="label_employees">Employees</string>
+    <string name="label_devolve">Devolve at DES</string>
+    <string name="label_evolve">Evolve at DES</string>
+    <string name="hint_no_file">Open a c3_model.txt file to begin editing.\nUse the menu → Open File.</string>
+    <string name="msg_file_loaded">File loaded</string>
+    <string name="msg_save_ok">Saved successfully</string>
+</resources>
