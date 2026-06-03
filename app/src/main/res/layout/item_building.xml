@@ -16,9 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12dp">
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
 
-        <!-- Building name -->
+        <!-- Building name header -->
         <TextView
             android:id="@+id/tv_building_name"
             android:layout_width="match_parent"
@@ -28,65 +31,55 @@
             android:textColor="@color/terracotta_dark"
             android:paddingBottom="6dp" />
 
-        <!-- Thin rule -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/divider"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="8dp" />
 
         <!-- Row 1: Cost | Desirability -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginEnd="6dp">
-                <TextView style="@style/CaesarLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_cost" />
-                <EditText
+                android:layout_marginEnd="5dp"
+                android:hint="@string/label_cost"
+                app:helperText="@string/helper_cost"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_cost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
                     android:textColor="@color/ink"
                     android:textSize="14sp"
-                    android:background="@color/field_background"
-                    android:paddingStart="8dp" android:paddingEnd="8dp"
-                    android:paddingTop="6dp"   android:paddingBottom="6dp"
                     android:singleLine="true" />
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginStart="6dp">
-                <TextView style="@style/CaesarLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_desirability" />
-                <EditText
+                android:layout_marginStart="5dp"
+                android:hint="@string/label_desirability"
+                app:helperText="@string/helper_desirability"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_desirability"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
                     android:textColor="@color/ink"
                     android:textSize="14sp"
-                    android:background="@color/field_background"
-                    android:paddingStart="8dp" android:paddingEnd="8dp"
-                    android:paddingTop="6dp"   android:paddingBottom="6dp"
                     android:singleLine="true" />
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -94,54 +87,45 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginEnd="6dp">
-                <TextView style="@style/CaesarLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_des_step" />
-                <EditText
+                android:layout_marginEnd="5dp"
+                android:hint="@string/label_des_step"
+                app:helperText="@string/helper_des_step"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_des_step"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
                     android:textColor="@color/ink"
                     android:textSize="14sp"
-                    android:background="@color/field_background"
-                    android:paddingStart="8dp" android:paddingEnd="8dp"
-                    android:paddingTop="6dp"   android:paddingBottom="6dp"
                     android:singleLine="true" />
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginStart="6dp">
-                <TextView style="@style/CaesarLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_des_step_size" />
-                <EditText
+                android:layout_marginStart="5dp"
+                android:hint="@string/label_des_step_size"
+                app:helperText="@string/helper_des_step_size"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_des_step_size"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
                     android:textColor="@color/ink"
                     android:textSize="14sp"
-                    android:background="@color/field_background"
-                    android:paddingStart="8dp" android:paddingEnd="8dp"
-                    android:paddingTop="6dp"   android:paddingBottom="6dp"
                     android:singleLine="true" />
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -151,51 +135,43 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginEnd="6dp">
-                <TextView style="@style/CaesarLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_des_range" />
-                <EditText
+                android:layout_marginEnd="5dp"
+                android:hint="@string/label_des_range"
+                app:helperText="@string/helper_des_range"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_des_range"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
                     android:textColor="@color/ink"
                     android:textSize="14sp"
-                    android:background="@color/field_background"
-                    android:paddingStart="8dp" android:paddingEnd="8dp"
-                    android:paddingTop="6dp"   android:paddingBottom="6dp"
                     android:singleLine="true" />
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginStart="6dp">
-                <TextView style="@style/CaesarLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_employees" />
-                <EditText
+                android:layout_marginStart="5dp"
+                android:hint="@string/label_employees"
+                app:helperText="@string/helper_employees"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_employees"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
                     android:textColor="@color/ink"
                     android:textSize="14sp"
-                    android:background="@color/field_background"
-                    android:paddingStart="8dp" android:paddingEnd="8dp"
-                    android:paddingTop="6dp"   android:paddingBottom="6dp"
                     android:singleLine="true" />
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 

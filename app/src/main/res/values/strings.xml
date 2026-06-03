@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- App -->
     <string name="app_name">Caesar III Editor</string>
     <string name="tab_buildings">Buildings</string>
     <string name="tab_houses">Houses</string>
     <string name="menu_open">Open File</string>
     <string name="menu_save">Save</string>
-    <string name="menu_save_as">Save As…</string>
+    <string name="menu_save_as">Save As&#8230;</string>
+
+    <!-- Field labels -->
     <string name="label_cost">Cost</string>
     <string name="label_desirability">Desirability</string>
     <string name="label_des_step">DES Step</string>
@@ -14,7 +18,40 @@
     <string name="label_employees">Employees</string>
     <string name="label_devolve">Devolve at DES</string>
     <string name="label_evolve">Evolve at DES</string>
-    <string name="hint_no_file">Open a c3_model.txt file to begin editing.\nUse the menu → Open File.</string>
+
+    <!-- Building field helper texts -->
+    <string name="helper_cost">Purchase price in Dn</string>
+    <string name="helper_desirability">Effect radiated to nearby housing (+ or −)</string>
+    <string name="helper_des_step">Tiles between each desirability ring</string>
+    <string name="helper_des_step_size">Value change per ring — use − if desirability is positive</string>
+    <string name="helper_des_range">Furthest tile reached (max 6 without code changes)</string>
+    <string name="helper_employees">Workers this building draws from nearby housing</string>
+
+    <!-- House field helper texts -->
+    <string name="helper_devolve">House degrades if local desirability falls below this</string>
+    <string name="helper_evolve">House upgrades when desirability exceeds this and all needs are met</string>
+
+    <!-- Toasts -->
+    <string name="hint_no_file">Open a file first — use the &#8942; menu → Open File</string>
     <string name="msg_file_loaded">File loaded</string>
     <string name="msg_save_ok">Saved successfully</string>
+    <string name="msg_backup_ok">Backup created</string>
+
+    <!-- Backup dialog -->
+    <string name="dialog_backup_title">Back up original file?</string>
+    <string name="dialog_backup_message">Recommended before making any changes.\n\nA backup lets you restore the original values if something goes wrong. You can save the copy anywhere on your device.</string>
+    <string name="dialog_backup_create">Create Backup</string>
+    <string name="dialog_backup_skip">Skip</string>
+
+    <!-- Welcome screen (empty state) -->
+    <string name="welcome_title">Caesar III Model Editor</string>
+    <string name="step1_title">1.  Open your file</string>
+    <string name="step1_body">Tap the &#8942; menu and choose Open File, then locate c3_model.txt on your device.</string>
+    <string name="step2_title">2.  Back up the original</string>
+    <string name="step2_body">You will be asked to create a safety copy before editing. Recommended — it lets you restore the original at any time.</string>
+    <string name="step3_title">3.  Adjust settings</string>
+    <string name="step3_body">Use the Buildings and Houses tabs to edit values directly. Each field shows a short description of what it controls in the game.</string>
+    <string name="step4_title">4.  Save</string>
+    <string name="step4_body">Tap &#8942; → Save to overwrite the file, or Save As&#8230; to write to a new location.</string>
+
 </resources>

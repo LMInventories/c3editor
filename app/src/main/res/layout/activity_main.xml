@@ -26,21 +26,119 @@
         app:tabIndicatorColor="@color/gold"
         app:tabIndicatorHeight="3dp" />
 
-    <!-- Shown when no file is loaded -->
-    <TextView
+    <!--
+        Welcome / empty state.
+        ID kept as tv_empty; Java field type is View (only setVisibility is called).
+        Replaced by showEditingView() once a file is loaded.
+    -->
+    <ScrollView
         android:id="@+id/tv_empty"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/hint_no_file"
-        android:textColor="@color/stone"
-        android:textSize="16sp"
-        android:lineSpacingMultiplier="1.4"
-        android:padding="40dp"
-        android:visibility="visible" />
+        android:fillViewport="true"
+        android:visibility="visible">
 
-    <!-- Hidden until file is loaded -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_title"
+                android:textColor="@color/terracotta_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingBottom="8dp" />
+
+            <!-- Subtitle rule -->
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/gold"
+                android:layout_marginBottom="28dp" />
+
+            <!-- Step 1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step1_title"
+                android:textColor="@color/terracotta_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step1_body"
+                android:textColor="@color/stone_dark"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.3"
+                android:paddingBottom="20dp" />
+
+            <!-- Step 2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step2_title"
+                android:textColor="@color/terracotta_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step2_body"
+                android:textColor="@color/stone_dark"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.3"
+                android:paddingBottom="20dp" />
+
+            <!-- Step 3 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step3_title"
+                android:textColor="@color/terracotta_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step3_body"
+                android:textColor="@color/stone_dark"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.3"
+                android:paddingBottom="20dp" />
+
+            <!-- Step 4 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step4_title"
+                android:textColor="@color/terracotta_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step4_body"
+                android:textColor="@color/stone_dark"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.3" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Hidden until a file is loaded -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
