@@ -16,6 +16,8 @@
     <string name="label_des_step_size">Step Size</string>
     <string name="label_des_range">Max Range</string>
     <string name="label_employees">Employees</string>
+    <string name="label_expansion1">Expansion g</string>
+    <string name="label_expansion2">Expansion h</string>
     <string name="label_devolve">Devolve at DES</string>
     <string name="label_evolve">Evolve at DES</string>
 
@@ -26,6 +28,7 @@
     <string name="helper_des_step_size">Value change per ring — use − if desirability is positive</string>
     <string name="helper_des_range">Furthest tile reached (max 6 without code changes)</string>
     <string name="helper_employees">Workers this building draws from nearby housing</string>
+    <string name="helper_expansion">Reserved for future use — keep at 0 unless you know what this does</string>
 
     <!-- House field helper texts -->
     <string name="helper_devolve">House degrades if local desirability falls below this</string>

@@ -19,6 +19,7 @@ package com.caesar3.editor.data;
 public class BuildingEntry {
 
     public final int lineIndex;
+    public final int id;
     public final String name;
     private final String prefix;
     private final String suffix;
@@ -30,17 +31,22 @@ public class BuildingEntry {
         this.suffix    = suffix;
         System.arraycopy(src, 0, values, 0, Math.min(src.length, 8));
 
-        // Extract name from "ID,Name,{," — split gives ["ID","Name","{",""]
+        // Extract id and name from "ID,Name,{," — split gives ["ID","Name","{",""]
         String[] parts = prefix.split(",", -1);
+        int parsedId = 0;
+        try { parsedId = Integer.parseInt(parts[0].trim()); } catch (NumberFormatException ignored) {}
+        this.id   = parsedId;
         this.name = parts.length >= 2 ? parts[1].trim() : prefix;
     }
 
-    public int getCost()         { return values[0]; }
-    public int getDesirability() { return values[1]; }
-    public int getDesStep()      { return values[2]; }
-    public int getDesStepSize()  { return values[3]; }
-    public int getDesRange()     { return values[4]; }
-    public int getEmployees()    { return values[5]; }
+    public int getCost()        { return values[0]; }
+    public int getDesirability(){ return values[1]; }
+    public int getDesStep()     { return values[2]; }
+    public int getDesStepSize() { return values[3]; }
+    public int getDesRange()    { return values[4]; }
+    public int getEmployees()   { return values[5]; }
+    public int getExpansion1()  { return values[6]; }
+    public int getExpansion2()  { return values[7]; }
 
     public void setCost(int v)         { values[0] = v; }
     public void setDesirability(int v) { values[1] = v; }
@@ -48,6 +54,8 @@ public class BuildingEntry {
     public void setDesStepSize(int v)  { values[3] = v; }
     public void setDesRange(int v)     { values[4] = v; }
     public void setEmployees(int v)    { values[5] = v; }
+    public void setExpansion1(int v)   { values[6] = v; }
+    public void setExpansion2(int v)   { values[7] = v; }
 
     public boolean isNothing() {
         return "Nothing".equalsIgnoreCase(name);

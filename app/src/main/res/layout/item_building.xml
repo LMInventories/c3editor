@@ -21,15 +21,33 @@
         android:paddingTop="12dp"
         android:paddingBottom="8dp">
 
-        <!-- Building name header -->
-        <TextView
-            android:id="@+id/tv_building_name"
+        <!-- Building name header with ID -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/terracotta_dark"
-            android:paddingBottom="6dp" />
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/tv_building_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/terracotta_dark"
+                android:alpha="0.6"
+                android:paddingEnd="6dp"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tv_building_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/terracotta_dark" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -129,7 +147,7 @@
 
         </LinearLayout>
 
-        <!-- Row 3: Max Range | Employees -->
+        <!-- Row 3: Employees | Max Range -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -165,6 +183,52 @@
                 app:helperTextEnabled="true">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_employees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:textColor="@color/ink"
+                    android:textSize="14sp"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- Row 4: Expansion 1 | Expansion 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:hint="@string/label_expansion1"
+                app:helperText="@string/helper_expansion"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_expansion1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:textColor="@color/ink"
+                    android:textSize="14sp"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:hint="@string/label_expansion2"
+                app:helperText="@string/helper_expansion"
+                app:helperTextEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_expansion2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"

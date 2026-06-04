@@ -46,15 +46,16 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.VH> {
 
     static class VH extends RecyclerView.ViewHolder {
 
-        private final TextView tvName;
-        private final EditText etCost, etDes, etStep, etSize, etRange, etEmp;
+        private final TextView tvId, tvName;
+        private final EditText etCost, etDes, etStep, etSize, etRange, etEmp, etExp1, etExp2;
 
         // One watcher reference per field; removed before each rebind to prevent
         // cross-item corruption when the RecyclerView recycles views.
-        private TextWatcher wCost, wDes, wStep, wSize, wRange, wEmp;
+        private TextWatcher wCost, wDes, wStep, wSize, wRange, wEmp, wExp1, wExp2;
 
         VH(@NonNull View v) {
             super(v);
+            tvId    = v.findViewById(R.id.tv_building_id);
             tvName  = v.findViewById(R.id.tv_building_name);
             etCost  = v.findViewById(R.id.et_cost);
             etDes   = v.findViewById(R.id.et_desirability);
@@ -62,6 +63,8 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.VH> {
             etSize  = v.findViewById(R.id.et_des_step_size);
             etRange = v.findViewById(R.id.et_des_range);
             etEmp   = v.findViewById(R.id.et_employees);
+            etExp1  = v.findViewById(R.id.et_expansion1);
+            etExp2  = v.findViewById(R.id.et_expansion2);
         }
 
         void bind(BuildingEntry e) {
@@ -69,6 +72,7 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.VH> {
             removeAll();
 
             // Step 2: populate
+            tvId.setText("#" + e.id);
             tvName.setText(e.name);
             if (e.isNothing()) {
                 tvName.setTextColor(0xFFB0A090);
@@ -83,6 +87,8 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.VH> {
             etSize .setText(String.valueOf(e.getDesStepSize()));
             etRange.setText(String.valueOf(e.getDesRange()));
             etEmp  .setText(String.valueOf(e.getEmployees()));
+            etExp1 .setText(String.valueOf(e.getExpansion1()));
+            etExp2 .setText(String.valueOf(e.getExpansion2()));
 
             // Step 3: attach fresh watchers
             wCost  = w(s -> e.setCost(s));
@@ -91,6 +97,8 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.VH> {
             wSize  = w(s -> e.setDesStepSize(s));
             wRange = w(s -> e.setDesRange(s));
             wEmp   = w(s -> e.setEmployees(s));
+            wExp1  = w(s -> e.setExpansion1(s));
+            wExp2  = w(s -> e.setExpansion2(s));
 
             etCost .addTextChangedListener(wCost);
             etDes  .addTextChangedListener(wDes);
@@ -98,6 +106,8 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.VH> {
             etSize .addTextChangedListener(wSize);
             etRange.addTextChangedListener(wRange);
             etEmp  .addTextChangedListener(wEmp);
+            etExp1 .addTextChangedListener(wExp1);
+            etExp2 .addTextChangedListener(wExp2);
         }
 
         private void removeAll() {
@@ -107,7 +117,9 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.VH> {
             if (wSize  != null) etSize .removeTextChangedListener(wSize);
             if (wRange != null) etRange.removeTextChangedListener(wRange);
             if (wEmp   != null) etEmp  .removeTextChangedListener(wEmp);
-            wCost = wDes = wStep = wSize = wRange = wEmp = null;
+            if (wExp1  != null) etExp1 .removeTextChangedListener(wExp1);
+            if (wExp2  != null) etExp2 .removeTextChangedListener(wExp2);
+            wCost = wDes = wStep = wSize = wRange = wEmp = wExp1 = wExp2 = null;
         }
 
         interface IntSetter { void set(int v); }
